@@ -1,16 +1,23 @@
-import { IsDate, IsNotEmpty, IsNumber, IsString } from "class-validator"
+import { IsNotEmpty, IsNumber, IsString, IsOptional } from "class-validator"
 
 export class CreateAnimalDto {
     @IsString()
     @IsNotEmpty()
     readonly identificador: string
+
+    @IsOptional()
     @IsString()
-    readonly raça: string
+    readonly raca?: string
+
+    @IsOptional()
     @IsString()
-    readonly peso: string
+    readonly peso?: string
+
+    @IsOptional()
     @IsString()
-    readonly sexo: string
+    readonly sexo?: string
+
+    @IsOptional()
     @IsNumber()
-    @IsNotEmpty()
-    readonly loteId: number
+    readonly loteId?: number
 }

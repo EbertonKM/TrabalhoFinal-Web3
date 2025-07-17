@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString } from "class-validator"
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator"
 
 export class CreatePiqueteDto {
     @IsString()
@@ -11,6 +11,6 @@ export class CreatePiqueteDto {
     @IsNotEmpty()
     readonly cultivo: string
     @IsNumber()
-    @IsNotEmpty()
-    readonly loteId: number
+    @IsOptional()
+    readonly loteId?: number
 }
