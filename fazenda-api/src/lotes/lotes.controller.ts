@@ -1,11 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { LotesService } from './lotes.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { LoteService } from './lotes.service';
 import { CreateLoteDto } from './dto/create-lote.dto';
 import { UpdateLoteDto } from './dto/update-lote.dto';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Controller('lotes')
 export class LotesController {
-  constructor(private readonly lotesService: LotesService) {}
+  constructor(private readonly lotesService: LoteService) {}
 
   @Post()
   create(@Body() createLoteDto: CreateLoteDto) {
@@ -13,8 +14,8 @@ export class LotesController {
   }
 
   @Get()
-  findAll() {
-    return this.lotesService.findAll();
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.lotesService.findAll(paginationDto);
   }
 
   @Get(':id')

@@ -1,26 +1,73 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { CreatePiqueteDto } from './dto/create-piquete.dto';
 import { UpdatePiqueteDto } from './dto/update-piquete.dto';
 
 @Injectable()
-export class PiquetesService {
-  create(createPiqueteDto: CreatePiqueteDto) {
-    return 'This action adds a new piquete';
+export class PiqueteService {
+  constructor(private readonly prisma: PrismaService) {}
+
+  async findAll(paginationDto: PaginationDto) {
+    const { limit = 10, offset = 0 } = paginationDto;
+
+    return this.prisma.piquete.findMany({
+      take: limit,
+      skip: offset,
+      orderBy: { id: 'asc' },
+      include: { lote: true },
+    });
   }
 
-  findAll() {
-    return `This action returns all piquetes`;
+  async findOne(id: number) {
+    const piquete = await this.prisma.piquete.findUnique({
+      where: { id },
+      include: { lote: true },
+    });
+
+    if (piquete) return piquete;
+
+    throw new HttpException('Esse piquete não existe', HttpStatus.NOT_FOUND);
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} piquete`;
+  async create(createPiqueteDto: CreatePiqueteDto) {
+    try {
+      const newPiquete = await this.prisma.piquete.create({
+        data: createPiqueteDto,
+      });
+      return newPiquete;
+    } catch (e) {
+      throw new HttpException('Não foi possível cadastrar o piquete', HttpStatus.BAD_REQUEST);
+    }
   }
 
-  update(id: number, updatePiqueteDto: UpdatePiqueteDto) {
-    return `This action updates a #${id} piquete`;
+  async update(id: number, updatePiqueteDto: UpdatePiqueteDto) {
+    const piquete = await this.prisma.piquete.findUnique({ where: { id } });
+
+    if (!piquete)
+      throw new HttpException('Esse piquete não existe', HttpStatus.NOT_FOUND);
+
+    try {
+      return this.prisma.piquete.update({
+        where: { id },
+        data: updatePiqueteDto,
+      });
+    } catch (e) {
+      throw new HttpException('Não foi possível atualizar o piquete', HttpStatus.BAD_REQUEST);
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} piquete`;
+  async remove(id: number) {
+    const piquete = await this.prisma.piquete.findUnique({ where: { id } });
+
+    if (!piquete)
+      throw new HttpException('Esse piquete não existe', HttpStatus.NOT_FOUND);
+
+    try {
+      await this.prisma.piquete.delete({ where: { id } });
+      return 'Piquete excluído com sucesso';
+    } catch (e) {
+      throw new HttpException('Não foi possível deletar o piquete', HttpStatus.BAD_REQUEST);
+    }
   }
 }

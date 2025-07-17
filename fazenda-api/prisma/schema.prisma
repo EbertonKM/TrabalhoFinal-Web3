@@ -18,10 +18,8 @@ model Animal {
   id Int @id @default(autoincrement())
   identificador String @unique
   raca String?
-  nascimento DateTime?
   peso String?
   sexo String?
-  estagioDeVida String?
 
   loteId Int?
   lote Lote? @relation(fields: [loteId], references: [id], onDelete: SetNull)

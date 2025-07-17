@@ -1,11 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { PiquetesService } from './piquetes.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { PiqueteService } from './piquetes.service';
 import { CreatePiqueteDto } from './dto/create-piquete.dto';
 import { UpdatePiqueteDto } from './dto/update-piquete.dto';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Controller('piquetes')
 export class PiquetesController {
-  constructor(private readonly piquetesService: PiquetesService) {}
+  constructor(private readonly piquetesService: PiqueteService) {}
 
   @Post()
   create(@Body() createPiqueteDto: CreatePiqueteDto) {
@@ -13,8 +14,8 @@ export class PiquetesController {
   }
 
   @Get()
-  findAll() {
-    return this.piquetesService.findAll();
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.piquetesService.findAll(paginationDto);
   }
 
   @Get(':id')

@@ -1,0 +1,251 @@
+/* Utilizado CSS padrão
+Praticamente todo conteúdo desse arquivo foi gerado pelo Chat GPT */
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background-color: #d4eadf;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #2f5d3a;
+  margin: 0;
+  cursor: pointer;
+}
+
+header nav {
+  display: flex;
+  gap: 2rem;
+}
+
+header nav a {
+  color: #497c5a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: #fff;
+  background-color: #3a6b3e;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #2f5d3a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------ */
+
+.home-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f5d3a;
+  background-color: #f9fefb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  color: #3a6b3e;
+  text-align: center;
+}
+
+.home-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #497c5a;
+}
+
+.home-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #38553c;
+  text-align: justify;
+}
+
+/* ------ */
+
+.list-page {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f5d3a;
+  background-color: #f9fefb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+.list-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #3a6b3e;
+  text-align: center;
+}
+
+.list-add {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #497c5a;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+
+.list-add:hover,
+.list-add:focus {
+  background-color: #3a6b3e;
+  outline: none;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #d4eadf;
+  color: #2f5d3a;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #c4d7cb;
+  font-size: 0.95rem;
+}
+
+tbody tr:hover {
+  background-color: #e6f0e9;
+}
+
+td:last-child button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+td:last-child button:hover {
+  background-color: #b52b27;
+}
+
+td:nth-last-child(2) a {
+  font-weight: 700;
+  color: #3a6b3e;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 0 0.5rem;
+  transition: color 0.25s ease;
+}
+
+td:nth-last-child(2) a:hover,
+td:nth-last-child(2) a:focus {
+  color: #1f3d21;
+  outline: none;
+  text-decoration: none;
+}
+
+/* ------ */
+
+.add-page {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f5d3a;
+  background-color: #f9fefb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+.add-page h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #3a6b3e;
+  text-align: center;
+}
+
+.add-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-page input, .add-page select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #a5c7b0;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-page input:focus, .add-page select:focus {
+  border-color: #3a6b3e;
+  box-shadow: 0 0 0 3px rgb(58 107 62 / 0.2);
+  outline: none;
+}
+
+.add-page label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #497c5a;
+}
+
+.add-page button[type="submit"] {
+  margin-top: 1rem;
+  background-color: #497c5a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+}
+
+.add-page button[type="submit"]:hover {
+  background-color: #3a6b3e;
+}
+
+/* ------ */
