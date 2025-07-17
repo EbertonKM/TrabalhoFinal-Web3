@@ -4,7 +4,7 @@ import { CreatePiquete } from "@/types/Piquete";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react"
 
-export default function Entregas() {
+export default function NovoPiquete() {
     const router = useRouter()
     const [form, setForm] = useState<CreatePiquete>({ nome: '', atividade: '', cultivo: ''})
 

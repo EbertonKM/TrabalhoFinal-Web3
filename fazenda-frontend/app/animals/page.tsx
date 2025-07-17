@@ -3,8 +3,9 @@ import { deleteAnimal, getAnimals } from "@/lib/animalsAPI";
 import { Animal } from "@/types/Animal";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { getLote } from "@/lib/lotesAPI";
 
-export default function Home() {
+export default function Animals() {
   const [animais, setAnimais] = useState<Animal[]>([])
 
   const carregarAnimais = async () => {

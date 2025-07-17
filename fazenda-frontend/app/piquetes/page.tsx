@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Piquete } from "@/types/Piquete";
 import { deletePiquete, getPiquetes } from "@/lib/piquetesAPI";
 
-export default function Home() {
+export default function Piquetes() {
   const [piquetes, setPiquetes] = useState<Piquete[]>([])
 
   const carregarPiquetes = async () => {

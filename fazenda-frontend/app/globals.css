@@ -249,3 +249,107 @@ td:nth-last-child(2) a:focus {
 }
 
 /* ------ */
+
+.edit-page {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f9fefb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f5d3a;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3a6b3e;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.edit-page p {
+  text-align: center;
+  font-style: italic;
+  color: #7a8b7a;
+  font-size: 1.1rem;
+}
+
+.edit-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.edit-page label {
+  font-weight: 600;
+  color: #497c5a;
+}
+
+.edit-page input,
+.edit-page select {
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #a5c7b0;
+  border-radius: 6px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  color: #2f5d3a;
+}
+
+.edit-page input:focus,
+.edit-page select:focus {
+  border-color: #3a6b3e;
+  box-shadow: 0 0 0 3px rgb(58 107 62 / 0.2);
+  outline: none;
+}
+
+.edit-page .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.edit-page button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #497c5a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+}
+
+.edit-page button[type="submit"]:hover,
+.edit-page button[type="submit"]:focus {
+  background-color: #3a6b3e;
+  outline: none;
+}
+
+button.voltar {
+  background-color: transparent;
+  color: #497c5a;
+  border: 2px solid #497c5a;
+  padding: 0.65rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-width: 120px;
+}
+
+button.voltar:hover,
+button.voltar:focus {
+  background-color: #497c5a;
+  color: #fff;
+  outline: none;
+}
+
+/* ------ */

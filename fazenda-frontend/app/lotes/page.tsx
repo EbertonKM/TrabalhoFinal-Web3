@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Lote } from "@/types/Lote";
 import { deleteLote, getLotes } from "@/lib/lotesAPI";
 
-export default function Home() {
+export default function Lotes() {
   const [lotes, setLotes] = useState<Lote[]>([])
 
   const carregarLotes = async () => {

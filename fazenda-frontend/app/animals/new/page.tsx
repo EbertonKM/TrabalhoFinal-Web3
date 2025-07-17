@@ -6,7 +6,7 @@ import { Lote } from "@/types/Lote";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react"
 
-export default function Entregas() {
+export default function NovoAnimal() {
     const router = useRouter()
     const [form, setForm] = useState<CreateAnimal>({ identificador: '', raca: '', peso: '', sexo: 'macho', loteId: undefined})
     const [lotes, setLotes] = useState<Lote[]>([])

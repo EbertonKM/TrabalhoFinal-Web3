@@ -31,7 +31,7 @@ model Lote {
 
   animais Animal[]
 
-  piqueteId Int? @unique
+  piqueteId Int?  @unique
   piquete Piquete? @relation(fields: [piqueteId], references: [id], onDelete: SetNull)
 }
 
